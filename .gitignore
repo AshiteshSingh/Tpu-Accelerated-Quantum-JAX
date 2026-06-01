@@ -43,3 +43,30 @@ Thumbs.db
 *.tmp
 *.log
 scratch/
+
+# Development artifacts — not for public repo
+patch.b64
+patch.diff
+push_and_run.sh
+
+# Debug images committed by mistake
+nan.png
+"no nan 4epoch.png"
+"non na 1000qubits3.png"
+"non na 1000qubits3 copy.png"
+
+# Stray root-level experiment files (moved to proper subdirs)
+1000qubits.py
+1000qubits2.py
+512qubits.py
+512qubits.txt
+40mqubits.py
+vqe_40m_dashboard*.png
+vqe_40m_report*.txt
+vqe_1024q_v5e16.py
+tpu_examples_runner.py
+run_all.py
+colab_tpu_v5e.ipynb
+
+# Node
+node_modules/
