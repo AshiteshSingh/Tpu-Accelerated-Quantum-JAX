@@ -862,3 +862,20 @@ This JAX research suite is licensed under the MIT License.
 <div align="center">
 Built with ❤️ by JAX Quantum Computing Researchers
 </div>
+
+
+## 📖 Citation
+
+If you use this simulator in your research, please cite:
+
+```bibtex
+@software{singh2026tpujax,
+  author    = {Singh, Ashitesh},
+  title     = {TPU-Accelerated Quantum JAX: A High-Performance Differentiable
+               Quantum State-Vector and Tensor Network Simulator on Google Cloud TPU},
+  year      = {2026},
+  publisher = {GitHub},
+  url       = {https://github.com/AshiteshSingh/Tpu-Accelerated-Quantum-JAX},
+  note      = {Supported by Google TPU Research Cloud (TRC) Program}
+}
+```
