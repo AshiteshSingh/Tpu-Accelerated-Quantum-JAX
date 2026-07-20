@@ -18,18 +18,23 @@ except ImportError:
 import jax
 import jax.numpy as jnp
 import pennylane as qml
-sys.path.insert(0, 'c:\\Users\\mswuk\\Desktop\\quantumcircuits')
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EXPERIMENT_DIR = os.path.join(REPO_ROOT, 'experiment')
+GPU_DIR = os.path.join(REPO_ROOT, 'gpu')
+
+sys.path.insert(0, EXPERIMENT_DIR)
 import jax_qsim.circuit as our_circ
 import jax_qsim.statevector as our_sv
-sys.path.remove('c:\\Users\\mswuk\\Desktop\\quantumcircuits')
-sys.path.insert(0, 'c:\\Users\\mswuk\\Desktop\\research paper\\Tpu-Accelerated-Quantum-JAX\\gpu')
+sys.path.remove(EXPERIMENT_DIR)
+sys.path.insert(0, GPU_DIR)
 for mod_name in list(sys.modules.keys()):
     if mod_name.startswith('jax_qsim'):
         del sys.modules[mod_name]
 import jax_qsim.circuit as original_circ
 NUM_QUBITS = 25
 NUM_REPEATS = 3
-results_dir = 'c:\\Users\\mswuk\\Desktop\\quantumcircuits\\results'
+results_dir = os.path.join(EXPERIMENT_DIR, 'results')
 os.makedirs(results_dir, exist_ok=True)
 params = jax.random.uniform(jax.random.PRNGKey(42), shape=(NUM_QUBITS,))
 

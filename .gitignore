@@ -21,8 +21,11 @@ htmlcov/
 Thumbs.db
 
 # Research Results (raw data — keep folder structure, ignore large data files)
-results/*.json
-results/*.csv
+# Applies to every results/ directory in the repo (gpu/results, tpu/results,
+# shors/results, experiment/results, results/), not just the root one.
+**/results/*.json
+**/results/*.csv
+**/results/*.txt
 
 # Development artifacts — not for public repo
 patch.b64
