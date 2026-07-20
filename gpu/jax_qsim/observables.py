@@ -9,6 +9,12 @@ class PauliString:
         self.term = term
 
     def apply(self, state: jnp.ndarray) -> jnp.ndarray:
+        num_qubits = state.ndim
+        for qubit in self.term:
+            if not 0 <= qubit < num_qubits:
+                raise ValueError(
+                    f'PauliString references qubit {qubit}, but the state only '
+                    f'has {num_qubits} qubit(s) (valid range is [0, {num_qubits})).')
         out_state = state
         for qubit, op_char in sorted(self.term.items()):
             if op_char == 'X':
