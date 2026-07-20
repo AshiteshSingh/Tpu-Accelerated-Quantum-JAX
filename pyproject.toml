@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jax-qsim"
+version = "0.1.0"
+description = "Pure-JAX, differentiable quantum state-vector simulator accelerated on GPU/TPU."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+dependencies = [
+    "jax>=0.10.0",
+    "jaxlib>=0.10.0",
+    "numpy>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0.0"]
+
+[tool.setuptools]
+package-dir = { "" = "gpu" }
+
+[tool.setuptools.packages.find]
+where = ["gpu"]
+include = ["jax_qsim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
