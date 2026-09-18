@@ -6,8 +6,8 @@ import math
 def test_parameterized_circuit():
     """Test a simple parameterized circuit for VQE/QAOA use cases."""
     c = Circuit(num_qubits=2)
-    c.rx(0, param="theta")
-    c.ry(1, param="phi")
+    c.rx(0, param_index=0)
+    c.ry(1, param_index=1)
     c.cnot(0, 1)
     
     run_compiled = c.compile()

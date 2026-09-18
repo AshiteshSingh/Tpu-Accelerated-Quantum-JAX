@@ -31,7 +31,7 @@ class PauliString:
 
     def __repr__(self) -> str:
         ops_str = ' * '.join((f'{op}{i}' for i, op in sorted(self.term.items())))
-        return f'PauliString({(ops_str if ops_str else 'Identity')})'
+        return f'PauliString({(ops_str if ops_str else "Identity")})'
 
 def expectation(state: jnp.ndarray, observable: PauliString) -> float:
     o_state = observable.apply(state)
